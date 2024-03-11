@@ -5,7 +5,7 @@ Project Name: Jue Gao's Website
 @font-face {
   font-family: 'Source_Sans_3';
   src: url('../font/Source_Sans_3/SourceSans3-VariableFont_wght.ttf') format('truetype'),
- 			 url('../font/Source_Sans_3/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype');
+ 	url('../font/Source_Sans_3/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 .special-font {
