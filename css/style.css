@@ -15,6 +15,12 @@ body, html {
   box-sizing: border-box; /* IE */
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 #container {
 	display: flex;
 	width: 100%;
@@ -72,7 +78,58 @@ a {
 
 .linkedin-icon, .github-icon {
 	width: 30px;
-  height: 30px;
+  	height: 30px;
 	margin-right: 15px;
 	margin-top: 40px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 10;
+}
+
+.hamburger a {
+	text-decoration: none;
+	font-size: 50px;
+	color: #CCB6AF;
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* Initially hidden */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease; /* Smooth transition for the opacity */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76,76,76, 0.9); /* Example background */
+    z-index: 1; /* Ensure it's above other content */
+}
+
+/* Overlay Content */
+.overlay-content {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content a {
+    padding: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 36px; /* Adjust size as needed */
+    color: white;
+    display: block; /* Each link takes a full line */
+    transition: 0.3s;
+}
+
+.overlay-content a:hover, .overlay-content a:focus {
+    color: #f1f1f1;
 }

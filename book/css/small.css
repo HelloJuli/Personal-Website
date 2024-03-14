@@ -1,0 +1,14 @@
+/*
+* Mobile Styles
+*/
+
+.hamburger {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  z-index: 10;
+}
+
+h1 {
+  padding-top: 30px;
+}

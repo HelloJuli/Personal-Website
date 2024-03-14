@@ -3,23 +3,30 @@
 <head>
     	<title>JG</title>
     	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="keywords" content="Jue Gao">
     	<meta name="description" content="Jue Gao is a corporate strategist, investor, and tech enthusiast">
-	<!-- external CSS link -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/small.css" media="(max-width: 600px)">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- external CSS link -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/small.css" media="(max-width: 600px)">
 </head>
 
 <body>
 	<div id="container">
 	<!-- START HERE --> 
-		<div id="image">
+		<div id="image" class="clearfix">
 		<!-- Image goes here -->
 			<img src="images/jg.jpeg" alt="Jue Gao">
+
+			<div class="hamburger" onclick="toggleOverlay()">
+				<a href="javascript:void(0);">&equiv;</a>
+			</div>
 		</div>
 
 		<div id="text">
@@ -49,10 +56,35 @@
 			<a href="mailto:gaojue2023@gmail.com">
 				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg>
 			</a>
-
 		</div>
-	<!-- END HERE --> 
-	</div><!-- #container --> 
+	</div><!-- #container -->
+
+    <!-- Overlay -->
+	<div id="navigationOverlay" class="overlay">
+	    <div class="overlay-content">
+	        <a href="index.html">Home</a>
+	        <a href="book/index.html">Books</a>
+	    </div>
+	</div>
+
+    <script>
+        function toggleOverlay() {
+		    var overlay = document.getElementById("navigationOverlay");
+		    var isHidden = window.getComputedStyle(overlay).display === "none";
+		    
+		    if (isHidden) {
+		        overlay.style.display = 'block'; // Make the overlay box visible
+		        setTimeout(function() { // Timeout to ensure the display property applies first
+		            overlay.style.opacity = '1'; // Fade in
+		        }, 10); // Short delay before starting the opacity transition
+		    } else {
+		        overlay.style.opacity = '0'; // Fade out
+		        setTimeout(function() { // Wait for the fade-out transition before hiding
+		            overlay.style.display = 'none';
+		        }, 500); // Match the duration of the opacity transition
+		    }
+		}
+    </script>
 </body>
 </html>
 

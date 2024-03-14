@@ -1,0 +1,140 @@
+/* 
+Project Name: Book
+*/
+
+body, html {
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+	background: #eaeaea;
+	color: #5a3e36;
+}
+
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#content-wrap {
+    flex: 1; /* Allows content to expand */
+    display: flex; /* Ensures that .booklist can be a flex item */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.image {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    gap: 20px;
+    padding: 20px;
+}
+
+.image img {
+    max-width: 300px; /* Ensures the image scales down if it's larger than its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    flex: 1; /* Allows the images to grow and fill the space, adjust this as needed */
+    min-width: 100px;
+}
+
+h1 {
+	text-align: center;
+	padding: 15px;
+	font-weight: 400;
+    margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 26px;
+	font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.booklist {
+	flex: 1;
+	display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    grid-template-rows: auto; /* Each row's height is set to 'auto' to fit its content */
+    height: 100vh; /* Sets the body's height to fill the viewport */
+    gap: 20px;
+    align-items: start; /* Aligns items to the start of the grid area */
+    margin: 0; /* Resets default margin */
+}
+
+.chinese, .english {
+    display: flex;
+    flex-direction: column; /* Stacks content of each section vertically */
+    justify-content: center; /* Centers content vertically in each section */
+    align-items: center; /* Centers content horizontally in each section */
+    padding: 20px; 
+}
+
+#chinesefont {
+	font-family: "Noto Serif SC", sans-serif;
+}
+
+/* Hamburger Menu */
+.hamburger {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 10;
+}
+
+.hamburger a {
+	text-decoration: none;
+	font-size: 50px;
+	color: #CCB6AF;
+}
+
+/* Overlay */
+.overlay {
+    display: none; /* Initially hidden */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease; /* Smooth transition for the opacity */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76,76,76, 0.9);
+    z-index: 1; /* Ensure it's above other content */
+}
+
+/* Overlay Content */
+.overlay-content {
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay-content a {
+    padding: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 36px; /* Adjust size as needed */
+    color: white;
+    display: block; /* Each link takes a full line */
+    transition: 0.3s;
+}
+
+.overlay-content a:hover, .overlay-content a:focus {
+    color: #f1f1f1;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    background: #eaeaea;
+	color: #5a3e36;
+}
